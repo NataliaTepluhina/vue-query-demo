@@ -1,5 +1,6 @@
 import { createApp, h } from 'vue'
 import { useQueryProvider } from 'vue-query'
+import router from './router'
 import App from './App.vue'
 
 createApp({
@@ -9,4 +10,6 @@ createApp({
   setup() {
     useQueryProvider()
   },
-}).mount('#app')
+})
+  .use(router)
+  .mount('#app')
