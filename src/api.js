@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const getCharacters = () => {
-  return axios.get('https://rickandmortyapi.com/api/charac1ter')
+  return axios.get('http://localhost:4000/characters')
 }

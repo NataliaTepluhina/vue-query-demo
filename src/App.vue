@@ -18,7 +18,7 @@ export default {
 <template>
   <p v-if="error">Error!</p>
   <div v-else-if="isLoading">Loading...</div>
-  <div v-else>{{ data.data.results }}</div>
+  <div v-else>{{ data.data }}</div>
 </template>
 
 <style>
