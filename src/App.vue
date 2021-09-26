@@ -1,12 +1,24 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import { useQuery } from 'vue-query'
+import { getCharacters } from './api'
+
+export default {
+  setup() {
+    const { isLoading, data, error } = useQuery('characters', getCharacters)
+
+    return {
+      isLoading,
+      data,
+      error,
+    }
+  },
+}
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <p v-if="error">Error!</p>
+  <div v-else-if="isLoading">Loading...</div>
+  <div v-else>{{ data.data.results }}</div>
 </template>
 
 <style>
