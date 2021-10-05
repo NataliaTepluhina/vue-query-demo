@@ -7,3 +7,7 @@ const instance = axios.create({
 export const getCharacters = () => {
   return instance.get('/characters')
 }
+
+export const getCharacter = (id) => {
+  return instance.get(`/characters/${id}`)
+}

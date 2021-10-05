@@ -18,5 +18,7 @@ server.listen(4000, () => {
 router.render = (req, res) => {
   if (req.url === '/characters') {
     res.jsonp(filteredData)
+  } else {
+    res.jsonp(res.locals.data)
   }
 }
