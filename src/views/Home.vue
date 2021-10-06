@@ -1,14 +1,10 @@
 <script>
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
   setup() {
     const store = useStore()
-
-    onMounted(() => {
-      store.dispatch('fetchCharactersList')
-    })
 
     return {
       isLoading: computed(() => store.state.isLoading),

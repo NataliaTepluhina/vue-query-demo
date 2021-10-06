@@ -1,5 +1,6 @@
 <script>
-import { ref } from 'vue'
+import { computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   props: {
@@ -12,12 +13,14 @@ export default {
     const store = useStore()
 
     onMounted(() => {
-      store.dispatch('fetchCharacter')
+      if (!store.getters.getCharacterById(props.id)?.description) {
+        store.dispatch('fetchCharacter', props.id)
+      }
     })
 
     return {
       isLoading: computed(() => store.state.isLoading),
-      characters: computed(() => store.state.characters[0]),
+      character: computed(() => store.getters.getCharacterById(props.id)),
       isError: computed(() => store.state.isError),
     }
   },

@@ -23,8 +23,11 @@ export default createStore({
       state.isLoading = false
     },
     setCharacter(state, payload) {
-      const currentCharacter = state.find((char) => char.id === payload.id)
-      currentCharacter = payload.data
+      let currentCharacterIndex = state.characters.findIndex(
+        (char) => char.id === payload.id
+      )
+      state.characters[currentCharacterIndex] = payload.data
+      console.log(state.characters)
       state.isLoading = false
     },
   },
@@ -38,6 +41,19 @@ export default createStore({
         commit('setErrorState')
       }
     },
-    fetchCharacter() {},
+    async fetchCharacter({ commit }, id) {
+      commit('setLoadingState')
+      try {
+        const result = await getCharacter(id)
+        commit('setCharacter', { id, data: result.data })
+      } catch {
+        commit('setErrorState')
+      }
+    },
+  },
+  getters: {
+    getCharacterById: (state) => (id) => {
+      return state.characters.find((char) => char.id === id)
+    },
   },
 })

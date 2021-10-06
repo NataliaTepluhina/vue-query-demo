@@ -1,3 +1,18 @@
+<script>
+import { onMounted } from 'vue'
+import { useStore } from 'vuex'
+
+export default {
+  setup() {
+    const store = useStore()
+
+    onMounted(() => {
+      store.dispatch('fetchCharactersList')
+    })
+  },
+}
+</script>
+
 <template>
   <h1>I must not fear...</h1>
   <router-view></router-view>
