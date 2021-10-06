@@ -1,25 +1,23 @@
 <script>
-import { computed } from 'vue'
-import { useQuery } from 'vue-query'
-import { getCharacters } from '../api'
+import { ref } from 'vue'
 
 export default {
   setup() {
-    const { isLoading, data, error } = useQuery('characters', getCharacters)
-
-    const characters = computed(() => data?.value.data)
+    const isLoading = ref(false)
+    const isError = ref(false)
+    const characters = ref([])
 
     return {
       isLoading,
       characters,
-      error,
+      isError,
     }
   },
 }
 </script>
 
 <template>
-  <p v-if="error">Error!</p>
+  <p v-if="isError">Error!</p>
   <div v-else-if="isLoading">Loading...</div>
   <template v-else>
     <router-link

@@ -1,7 +1,5 @@
 <script>
-import { computed } from 'vue'
-import { useQuery } from 'vue-query'
-import { getCharacter } from '../api'
+import { ref } from 'vue'
 
 export default {
   props: {
@@ -11,13 +9,8 @@ export default {
     },
   },
   setup(props) {
-    const characterId = props.id
-
-    const { isLoading, data } = useQuery(['character', characterId], () =>
-      getCharacter(characterId)
-    )
-
-    const character = computed(() => data?.value?.data)
+    const isLoading = ref(false)
+    const character = ref([])
 
     return { character, isLoading }
   },

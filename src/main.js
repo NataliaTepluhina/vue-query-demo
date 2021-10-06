@@ -6,7 +6,7 @@ import App from './App.vue'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 5000,
+      staleTime: 20000,
     },
   },
 })
