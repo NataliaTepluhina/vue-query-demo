@@ -1,7 +1,7 @@
 {
   "characters": [
     { 
-      "id": 1,
+      "id": "1",
       "name": "Paul Atreides",
       "faction": "House Atreides",
       "image_url": "https://i.imgur.com/RETaSOv.jpg",
@@ -9,7 +9,7 @@
       "description": "Last Duke of House Atreides, leader of the Fremen, and first ruler of the Atreides Empire"
     },
         { 
-      "id": 2,
+      "id": "2",
       "name": "Chani Kynes",
       "faction": "Fremen",
       "image_url": "https://i.imgur.com/XCJkX5g.jpg",
@@ -17,7 +17,7 @@
       "description": "Chani Kynes, also known by her intimate name Sihaya, was the Fremen bound concubine of Emperor Paul Atreides."
     },
         { 
-      "id": 3,
+      "id": "3",
       "name": "Jessica Atreides",
       "faction": "House Atreides / Bene Gesserit",
       "image_url": "https://i.imgur.com/05AYGaU.jpg",
@@ -25,7 +25,7 @@
       "description": "Official concubine of Duke Leto Atreides I, and the mother of his son, Emperor Paul Atreides, and daughter, Alia Atreides. She was also a Reverend Mother of the Bene Gesserit Sisterhood"
     },
         { 
-      "id": 4,
+      "id": "4",
       "name": "Leto Atreides I",
       "faction": "House Atreides",
       "image_url": "https://i.imgur.com/NOjGU7u.jpg",
@@ -33,7 +33,7 @@
       "description": "Sometimes called Leto the Just or the Red Duke, was the twentieth duke of House Atreides fathered Emperor Paul Atreides and Regent Alia Atreides with Bene Gesserit concubine, Lady Jessica"
     },
         { 
-      "id": 5,
+      "id": "5",
       "name": "Gurney Halleck",
       "faction": "House Atreides",
       "image_url": "https://i.imgur.com/LNfbEY5.jpg",
@@ -41,7 +41,7 @@
       "description": "Warmaster for House Atreides during the reign of Leto Atreides I, and then his son Paul."
     },
     { 
-      "id": 6,
+      "id": "6",
       "name": "Thufir Hawat",
       "faction": "House Atreides",
       "image_url": "https://i.imgur.com/8HpC3D9.jpg",
@@ -49,7 +49,7 @@
       "description": "Mentat and Master of Assassins for House Atreides during the time of Duke Leto the Just."
     },
     { 
-      "id": 7,
+      "id": "7",
       "name": "Stilgar",
       "faction": "Fremen",
       "image_url": "https://i.imgur.com/3MSVB0w.jpg",
@@ -57,7 +57,7 @@
       "description": "Full name Stilgar Ben Fifrawi, was the Naib, or leader of Sietch Tabr, a Fremen tribe of Arrakis during the Atreides Fiefdom."
     },
     { 
-      "id": 8,
+      "id": "8",
       "name": "Vladimir Harkonnen",
       "faction": "House Harkonnen",
       "image_url": "https://i.imgur.com/jw8BpFW.jpg",
@@ -65,7 +65,7 @@
       "description": "Penultimate ruler of House Harkonnen, and the chief architect in the demise of Duke Leto Atreides of House Atreides during the latter part of the reign of Shaddam IV."
     },
     { 
-      "id": 9,
+      "id": "9",
       "name": "Glossu Rabban Harkonnen",
       "faction": "House Harkonnen",
       "image_url": "https://i.imgur.com/9zpfZBz.jpg",
@@ -73,7 +73,7 @@
       "description": "Also known as the Beast, Mudir Nahya (Demon Ruler), and King Cobra by the Fremen, was the older nephew of Baron Vladimir Harkonnen, and the Count of Lankiveil."
     },
     { 
-      "id": 10,
+      "id": "10",
       "name": "Gaius Helen Mohiam",
       "faction": "Bene Gesserit",
       "image_url": "https://i.imgur.com/ptgrosR.png",
