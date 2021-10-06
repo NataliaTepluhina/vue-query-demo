@@ -9,10 +9,17 @@ export default {
     },
   },
   setup(props) {
-    const isLoading = ref(false)
-    const character = ref([])
+    const store = useStore()
 
-    return { character, isLoading }
+    onMounted(() => {
+      store.dispatch('fetchCharacter')
+    })
+
+    return {
+      isLoading: computed(() => store.state.isLoading),
+      characters: computed(() => store.state.characters[0]),
+      isError: computed(() => store.state.isError),
+    }
   },
 }
 </script>

@@ -1,6 +1,7 @@
 import { createApp, h } from 'vue'
 import { useQueryProvider, QueryClient } from 'vue-query'
 import router from './router'
+import store from './store'
 import App from './App.vue'
 
 const queryClient = new QueryClient({
@@ -20,4 +21,5 @@ createApp({
   },
 })
   .use(router)
+  .use(store)
   .mount('#app')

@@ -1,16 +1,19 @@
 <script>
-import { ref } from 'vue'
+import { computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   setup() {
-    const isLoading = ref(false)
-    const isError = ref(false)
-    const characters = ref([])
+    const store = useStore()
+
+    onMounted(() => {
+      store.dispatch('fetchCharactersList')
+    })
 
     return {
-      isLoading,
-      characters,
-      isError,
+      isLoading: computed(() => store.state.isLoading),
+      characters: computed(() => store.state.characters),
+      isError: computed(() => store.state.isError),
     }
   },
 }
