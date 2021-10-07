@@ -10,7 +10,7 @@ export default {
   },
   setup(props) {
     const isLoading = ref(false)
-    const character = ref([])
+    const character = ref({})
 
     return { character, isLoading }
   },

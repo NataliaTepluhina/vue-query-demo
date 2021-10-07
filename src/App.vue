@@ -12,4 +12,9 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.error {
+  color: red;
+  font-weight: bold;
+}
 </style>
