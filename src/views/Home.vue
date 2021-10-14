@@ -1,7 +1,7 @@
 <script>
 import { computed } from 'vue'
-import { useQuery } from 'vue-query'
-import { getCharacters } from '../api'
+import { useQuery, useMutation } from 'vue-query'
+import { getCharacters, addCharacter } from '../api'
 
 export default {
   setup() {
@@ -9,10 +9,19 @@ export default {
 
     const characters = computed(() => data?.value.data)
 
+    const newChar = {
+      id: '11',
+      name: 'Feyd-Rautha Harkonnen',
+    }
+
+    const { mutate } = useMutation((newCharacter) => addCharacter(newCharacter))
+
     return {
       isLoading,
       characters,
       error,
+      mutate,
+      newChar,
     }
   },
 }
@@ -31,6 +40,7 @@ export default {
       {{ character.name }}
     </router-link>
   </template>
+  <button @click="mutate(newChar)">Add new character</button>
 </template>
 
 <style scoped>

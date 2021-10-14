@@ -4,10 +4,6 @@ const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
 const data = require('./db.json')
-const filteredData = data.characters.map((char) => ({
-  id: char.id,
-  name: char.name,
-}))
 
 server.use(middlewares)
 server.use(router)
@@ -16,8 +12,13 @@ server.listen(4000, () => {
 })
 
 router.render = (req, res) => {
-  if (req.url === '/characters') {
-    res.jsonp(filteredData)
+  if (req.url === '/characters' && req.method === 'GET') {
+    res.jsonp(
+      res.locals.data.map((char) => ({
+        id: char.id,
+        name: char.name,
+      }))
+    )
   } else {
     res.jsonp(res.locals.data)
   }

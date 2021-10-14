@@ -11,3 +11,7 @@ export const getCharacters = () => {
 export const getCharacter = (id) => {
   return instance.get(`/characters/${id}`)
 }
+
+export const addCharacter = (newCharacter) => {
+  return instance.post('/characters', newCharacter)
+}
