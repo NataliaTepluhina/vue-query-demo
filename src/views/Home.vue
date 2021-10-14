@@ -1,6 +1,6 @@
 <script>
 import { computed } from 'vue'
-import { useQuery, useMutation } from 'vue-query'
+import { useQuery, useMutation, useQueryClient } from 'vue-query'
 import { getCharacters, addCharacter } from '../api'
 
 export default {
@@ -14,7 +14,19 @@ export default {
       name: 'Feyd-Rautha Harkonnen',
     }
 
-    const { mutate } = useMutation((newCharacter) => addCharacter(newCharacter))
+    const queryClient = useQueryClient()
+
+    const { mutate } = useMutation(
+      (newCharacter) => addCharacter(newCharacter),
+      {
+        onSuccess: (res) => {
+          console.log(res)
+          queryClient.setQueryData(['characters'], {
+            data: [...characters.value, res.data],
+          })
+        },
+      }
+    )
 
     return {
       isLoading,
