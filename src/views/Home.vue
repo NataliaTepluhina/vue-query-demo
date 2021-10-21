@@ -40,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <p v-if="error">Error!</p>
+  <p v-if="error" class="error">Something went wrong. Please try again</p>
   <div v-else-if="isLoading">Loading...</div>
   <template v-else>
     <router-link
@@ -60,5 +60,10 @@ export default {
   display: block;
   font-size: 18px;
   margin-bottom: 8px;
+}
+
+.error {
+  font-weight: bold;
+  color: red;
 }
 </style>
