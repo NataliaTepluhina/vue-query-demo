@@ -37,4 +37,9 @@ export default {
   font-size: 18px;
   margin-bottom: 8px;
 }
+
+.error {
+  font-weight: bold;
+  color: red;
+}
 </style>
