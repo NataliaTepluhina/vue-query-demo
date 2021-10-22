@@ -20,7 +20,6 @@ export default {
       (newCharacter) => addCharacter(newCharacter),
       {
         onSuccess: (res) => {
-          console.log(res)
           queryClient.setQueryData(['characters'], {
             data: [...characters.value, res.data],
           })
