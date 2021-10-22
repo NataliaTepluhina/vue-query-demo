@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-  <p v-if="isError">Error!</p>
+  <p v-if="isError" class="error">Something went wrong! please try again</p>
   <div v-else-if="isLoading">Loading...</div>
   <template v-else>
     <router-link
