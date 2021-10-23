@@ -1,5 +1,7 @@
 <script>
 import { ref } from 'vue'
+import {} from 'vue-query'
+import {} from '../api'
 
 export default {
   setup() {
